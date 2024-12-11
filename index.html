@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دامون - فروشگاه پسته</title>
+    <style>
+        /* تنظیمات کلی */
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+body:not(header):not(footer){
+    line-height: 1.6;
+    color: #333;
+    padding-top: 8rem;
+    background-image: url(img/poster_4657514e-5f6e-478c-886c-dab1150955d2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+   
+    
+}
+
+/* هدر */
+header {
+    background-color: #4CAF50;
+    
+    position: fixed; /* اضافه کردن این خط */
+    width: 100%; /* عرض کامل */
+    top: 0; /* قرارگیری در بالای صفحه */
+    z-index: 1000; /* برای اینکه هدر بالاتر از سایر عناصر صفحه نمایش داده شود */
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+    padding-top: 2.5rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .user-options {
+    display: flex;
+    padding-top: 2.5rem;
+    
+}
+
+header .user-options a {
+    margin-left: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+}
+
+/* بنر اصلی */
+.hero {
+    background-image: url('images/hero-banner.jpg'); /* تصویر پس‌زمینه بنر */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 10rem 2rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content .btn {
+    background-color: #E74C3C;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+/* محصولات پیشنهادی */
+.featured-products {
+    padding: 5rem 2rem;
+    
+    text-align: center;
+    
+}
+
+.featured-products h2 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    width: 20rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+   }
+
+.product img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.product h3 {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.product p {
+    color: #E74C3C;
+    font-weight: bold;
+}
+
+.product .btn {
+    background-color: #75efa8;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: 2rem;
+    color:#000000;
+    text-decoration: none;
+    font: size 3rem;
+    border-style: solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    
+}
+.view-all:hover{
+    background-color: #97d699;
+    
+}
+
+
+/* چرا دیامون */
+.why-diamon {
+    padding: 5rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.why-diamon h2 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    text-align: center;
+    width: 15rem;
+}
+
+.benefit img {
+    width: 5rem;
+    margin-bottom: 1rem;
+}
+
+/* نظرات مشتریان */
+.testimonials {
+    padding: 5rem 2rem;
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.testimonial {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.testimonial h4 {
+    margin-top: 1rem;
+    font-weight: normal;
+    color: #3498DB;
+}
+
+/* عضویت در خبرنامه */
+.newsletter {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #2C3E50;
+    color: #fff;
+}
+
+.newsletter h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.newsletter p {
+    margin-bottom: 2rem;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.newsletter input[type="email"] {
+    padding: 1rem;
+    width: 25rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.newsletter button {
+    background-color: #E74C3C;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* فوتر */
+footer {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.contact-info, .social-media {
+    margin-top: 1rem;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+.tab{
+    border-radius: 1.5rem;
+    display: block;
+    max-width: 64%;
+    height: auto;
+    font-size: 1.8rem;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    margin: 2rem auto;
+}
+.h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.iman{
+    display: block; /* لازم است تصویر به صورت بلاک نمایش داده شود تا margin:auto کار کند */
+    margin: 2rem auto; /* مرکز کردن تصویر به صورت افقی و ایجاد فاصله از بالا */
+    max-width: 50%;
+    height: auto;
+    border-radius: 1.5rem;
+}
+
+.slideshow-container {
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            max-width: 80rem;
+            border-radius: 1.5rem;
+            padding-top: 10rem;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 50rem;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        .nav {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 1.6rem;
+            margin-top: -2.2rem;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            transition: 0.6s ease;
+            border-radius: 0 0.3rem 0 0.3rem;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 1.6rem;
+            margin-top: -2.2rem;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            border-radius: 0 0.3rem 0.3rem 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .prev {
+            left: 0;
+            border-radius: 0.3rem 0 0 0.3rem;
+        }
+        .next {
+            right: 0;
+            border-radius: 0 0.3rem 0.3rem 0;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 1.5rem;
+            width: 1.5rem;
+            margin: 0 0.5rem;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        #slide1:checked ~ .slides:nth-of-type(1),
+        #slide2:checked ~ .slides:nth-of-type(2),
+        #slide4:checked ~ .slides:nth-of-type(4),
+        #slide5:checked ~ .slides:nth-of-type(5),
+        #slide6:checked ~ .slides:nth-of-type(6)
+        
+        {
+            display: block;
+        }
+        .radio-buttons {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 1rem;
+        }
+        .radio-label {
+            cursor: pointer;
+            display: inline-block;
+            background-color: #bbb;
+            border-radius: 50%;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        input[type="radio"]:checked + .radio-label {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/photo_2024-11-29_12-33-45.jpg"  width="100rem" alt="دامون">
+                
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="mahsoolat.html">محصولات</a></li>
+                    <li><a href="darbarema.html">درباره ما</a></li>
+                    <li><a href="tamas.html">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <a href="#" class="cart-icon">🛒</a>
+                <a href="vorood.html" class="login">ورود</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- بنر اصلی -->
+    <div class="slideshow-container">
+        <img class="slides" src="img/photo_2024-11-09_13-11-36.jpg" alt="اسلاید 1">
+        <img class="slides" src="img/photo_2024-11-09_13-11-34.jpg" alt="اسلاید 2">
+        <img class="slides" src="img/ghoochi.jpg" alt="اسلاید 3">
+        <img class="slides" src="img/photo_2024-11-09_13-11-27.jpg" alt="اسلاید 4">
+
+        <!-- دکمه‌های قبلی و بعدی -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- نقاط ناوبری -->
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    
+
+    <!-- محصولات پیشنهادی -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>محصولات پیشنهادی</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="img/akbari.jpg" alt="پسته اکبری">
+                    <h3>پسته اکبری</h3>
+                    <p>قیمت: 530,000 تومان</p>
+                    <a href="#" class="btn">افزودن به سبد خرید</a>
+                </div>
+                <div class="product">
+                    <img src="img/taze.jpg" alt="پسته تازه">
+                    <h3>پسته تازه</h3>
+                    <p>قیمت: 300,000 تومان</p>
+                    <a href="#" class="btn">افزودن به سبد خرید</a>
+                </div>
+                <!-- محصولات بیشتر -->
+            </div>
+            <br>
+            <a href="mahsoolat.html" class="view-all" >مشاهده همه محصولات</a>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <div  >
+        <h2 class="h2">خواص پسته</h2>
+        <br>
+        <p style="border: 0.2rem solid black" class="tab" >
+            بررسی خواص پسته؛ نشان می‌دهد که این خشکبار آثار چشمگیری در کاهش وزن دارد. قسمت زیادی از چربی پسته در دیواره سلولی بافت آن ذخیره می‌شود که امکان جذب آن در روده وجود ندارد. این یکی از عواملی است که پسته را برای کاهش وزن مناسب می‌کند؛ چرا که چربی‌های موجود در پسته به طور کامل جذب نمی‌شوند.
+
+ذکر این نکته هم خالی از لطف نیست که کندن پوست پسته هنگام خوردن آن به خاطر زمان بر بودن موجب می‌شود که 41 درصد کمتر از خوردن مغز پسته پوست کنده کالری دریافت کنید.
+
+از جمله خاصیت پسته؛ این است که حاوی مقادیر قابل توجه ای از فیبر بوده که این ماده ی غذایی برای باکتری‌های روده مفید واقع می گردد. پس از تجزیه ی فیبر موجود در پسته، پروبیوتیک‌ها آن‌ها را به اسیدهای چرب با زنجیره کوتاه مانند بوتیرات تبدیل می‌کنند که فواید متعددی از جمله کاهش خطر ابتلا به مشکلات گوارشی، سرطان و بیماری‌های قلبی دارد.در بیان خواص پسته؛ به موضوع بیماری‌ های قلبی اشاره شد. در ادامه اما خاصیت پسته، در زمینه کاهش کلسترول به عنوان یک چربی مضر برای بدن مورد اشاره قرار می‌گیرد. پسته می‌تواند از شیوه‌های مختلفی خطر ابتلا به بیماری‌های قلبی را کاهش دهد. یکی از این شیوه‌ها تاثیر مثبت آنتی اکسیدان‌های موجود در پسته در کاهش کلسترول خون و نیز تنظیم فشار خون است.
+
+یک نوید ارزنده برای مبتلایان به فشار خون بالا این است که پسته علاوه بر کاهش کلسترول باعث کاهش فشار خون نیز می‌شود. نتایج 21 مطالعه در مورد تأثیر این میوه در کاهش فشار خون، نشان می‌دهد که مصرف آن باعث کاهش 1.82 میلی متر جیوه از حد بالایی فشار خون و 0.8 میلی متر جیوه از حد پایین فشار خون می‌شود.
+        </p>
+        </div>
+
+        <div  >
+            <h2 class="h2">عوامل موثر بر قیمت پسته</h2>
+            <br>
+            <p style="border: 0.2rem solid black" class="tab" >
+                قیمت پسته درجه یک با توجه به نوع، بازار و کیفیت پسته متفاوت می باشد. برای مثال خرید پسته اکبری و احمد آقایی نسبت به سایر پسته ها دارای قیمت بیشتری می باشند؛ زیرا ظاهر زیبا و لوکسی دارند و سطح کشت و محصول آن ها محدود می باشد.
+
+                در خرید پسته برای پذیرایی، سوغات یا مصرف روزمره، می‌توان انواع مختلفی را انتخاب نمود. همین مساله، تاثیر بسزایی بر قیمت پسته دارد. بنابراین، بهتر است قبل از اقدام برای خرید، هدف خود را مشخص کنید. معمولا پسته‌های لوکس مانند پسته اکبری و پسته آقایی، گزینه‌های بهتری برای سوغات هستند. در حالی که، پسته فندقی با قیمت مناسب‌تر، جهت مصرف روزمره با صرفه‌تر خواهد بود.
+            </p>
+            </div>
+
+            <div  >
+                <h2 class="h2">شرایط نگهداری پسته</h2>
+                <br>
+                <p style="border: 0.2rem solid black" class="tab" >
+                    پس از خرید پسته درجه یک، برای نگهداری باید آن را در ظروف عایق هوا و رطوبت نگه داشت. پسته در دمای اتاق تا چند هفته قابل استفاده است اما اگر آن را در یخچال نگهداری کنید، می‌ توانید آن را تا چند ماه استفاده کنید.
+
+بهترین محل برای نگهداری و سالم ماندن پسته، فریزر است که سبب می شود تا حدود یک سال، سالم و قابل استفاده باشد. انواع پسته، صرف نظر از نوع و کیفیت آن‌ها، باید در محیط خشک و خنک نگهداری شوند. توجه به شرایط نگهداری این محصول، در حفظ کیفیت آن تاثیرگذار است. اگر حجم بالایی از پسته را خریداری می‌کنید، این مساله اهمیت بیشتری پیدا می‌کند.
+                </p>
+                </div>    
+        <br>
+        <hr>
+
+   <br>
+    
+        <div class="container">
+            <h2 style="text-align: center;">چرا دامون؟</h2>
+            <br>
+            <div class="benefits">
+                <div class="benefit">
+                 
+                    <img src="img/photo_2024-11-29_12-13-21.jpg" alt="کیفیت تضمینی" style="height: 7rem; width: 7rem;">
+                
+                    <p>کیفیت تضمینی</p>
+                </div>
+                <div class="benefit">
+                    
+                    <img src="img/photo_2024-11-29_12-13-24.jpg" alt="ارسال سریع" style="width: 7rem; height: 7rem;">
+              
+                    <p>ارسال سریع</p>
+                </div>
+                <div class="benefit">
+                    
+                    <img src="img/photo_2024-11-29_12-31-45.jpg" alt="تازه‌ترین محصولات"style="width: 7rem; height: 7rem;">
+               
+                    <p >تازه‌ترین محصولات</p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <script>
+            // متغیر برای نگه‌داشتن شماره اسلاید
+let slideIndex = 0;
+
+// نمایش اسلایدها
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+
+    // مخفی کردن همه اسلایدها
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // حذف کلاس active از تمام نقاط
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // تغییر به اسلاید بعدی
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    // نمایش اسلاید فعلی
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    // تنظیم تایمر برای جابه‌جایی خودکار
+    setTimeout(showSlides, 1000); 
+}
+
+// تغییر اسلاید با دکمه‌ها
+function changeSlide(n) {
+    slideIndex += n - 1;
+    if (slideIndex < 0) slideIndex = 0;
+    showSlides();
+}
+
+// تغییر به اسلاید مشخص
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+}
+
+// اجرای اسلایدشو به صورت خودکار
+showSlides();
+        </script>
+
+ 
+    <footer >
+        <div class="container">
+            <div class="footer-links">|
+                <a href="darbarema.html">درباره ما</a>
+            </div>
+            <div class="contact-info">
+                <p>تماس با ما: moazame.abdolrezaei80@gmail.com |09303399191</p>
+            </div>
+            <div class="social-media">
+                <a href="#">اینستاگرام</a> |
+                <a href="#">تلگرام</a> |
+                <a href="#">واتساپ</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

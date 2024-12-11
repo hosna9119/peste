@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود و ثبت‌نام - دامون</title>
+    <style>
+        /* تنظیمات کلی */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(img/poster_4657514e-5f6e-478c-886c-dab1150955d2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            height: 100px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: right;
+        }
+
+        .container {
+            margin-top: 150px; /* فاصله از هدر */
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* فاصله بین فرم‌ها */
+            width: 30%;
+            max-width: 900px;
+        }
+
+        /* استایل فرم‌ها */
+        .form-section {
+            background-image: url(img/72653c80-64f7-11ee-86a9-bf4a5aeef919.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section form label {
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-section form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-section form button {
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-section form button:hover {
+            background: #276a2a;
+        }
+
+        .form-section p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+      
+
+        .logo {
+            height: 80px;
+            justify-items: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="img/photo_2024-11-29_12-33-45.jpg" alt="دامون">
+    </header>
+    <div class="container">
+        <!-- فرم ورود -->
+        <div class="form-section" id="login-form">
+            <h2>ورود</h2>
+            <form action="/login" method="post">
+                <label for="login-email">ایمیل:</label>
+                <input type="email" id="login-email" name="email" placeholder="ایمیل خود را وارد کنید" required>
+
+                <label for="login-password">رمز عبور:</label>
+                <input type="password" id="login-password" name="password" placeholder="رمز عبور خود را وارد کنید" required>
+
+                <button type="submit">ورود</button>
+            </form>
+            <p>اگر حساب کاربری ندارید <button onclick="showSignup()">ثبت نام کنید!</button></p>
+        </div>
+
+        <!-- فرم ثبت‌نام -->
+        <div class="form-section" id="signup-form" style="display: none;">
+            <h2>ثبت‌نام</h2>
+            <form action="/register" method="post">
+                <label for="register-name">نام:</label>
+                <input type="text" id="register-name" name="name" placeholder="نام خود را وارد کنید" required>
+
+                <label for="register-email">ایمیل:</label>
+                <input type="email" id="register-email" name="email" placeholder="ایمیل خود را وارد کنید" required>
+
+                <label for="register-password">رمز عبور:</label>
+                <input type="password" id="register-password" name="password" placeholder="رمز عبور خود را وارد کنید" required>
+
+                <button type="submit">ثبت‌نام</button>
+            </form>
+            <p>اگر قبلا ثبت نام کرده‌اید <button onclick="showLogin()">ورود کنید!</button></p>
+        </div>
+    </div>
+    
+    <script>
+        function showSignup() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه دامون - خانه</title>
+    <style>
+        body:not(header):not(footer) {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url(img/poster_4657514e-5f6e-478c-886c-dab1150955d2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header, footer {
+            background-color: #4CAF50;
+            
+            height: 10rem;
+            
+        }
+        header .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        }
+
+        nav ul {
+            list-style: none;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 2rem;
+        }
+      
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            
+            
+        }
+
+        .container {
+            max-width: 80rem; /* یا هر عرض دلخواه */
+            margin: 0 auto;
+            padding: 0 2rem;
+            justify-items: center;
+        }
+
+        .hero {
+            text-align: center;
+        background-image: url(img/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 4rem 2rem;
+        border-radius: 0.8rem;
+           
+        }
+
+        .hero h1 {
+            color: #4CAF50;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 2rem;
+        }
+
+        .product-highlight {
+            margin: 4rem 0;
+        }
+
+        .product-highlight h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .product {
+           background-image: url(img/72653c80-64f7-11ee-86a9-bf4a5aeef919.jpg);
+            background-repeat: no-repeat;
+    background-size: cover;
+            border: 0.1rem solid #ddd;
+            border-radius: 0.8rem;
+            padding: 1.5rem;
+        }
+
+        .product img {
+            width: 100%;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: 0.8rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        button {
+            border: 0.1rem solid #4CAF50;
+            border-radius: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: white;
+            color: #4CAF50;
+            transition: background-color 0.3s;
+        }
+
+        .hero, .product-highlight {
+        width: 100%; /* عرض کامل داخل کانتینر */
+        margin: 0 auto; /* وسط‌چین کردن */
+    }
+
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        del {
+            color: #4CAF50;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        /* نوار سبد خرید */
+        .cart-bar {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .cart-bar span {
+            margin-left: 1rem;
+        }
+        .logo {
+            position: absolute;
+            right: 2rem; /* فاصله از گوشه سمت راست */
+            top: 0;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- نوار سبد خرید -->
+    
+
+    <header>
+        <div class="container">
+        <div class="logo">
+        <img src="img/photo_2024-11-29_12-33-45.jpg" width="100rem" alt="دامون">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="mahsoolat.html">محصولات</a></li>
+                <li><a href="darbarema.html">درباره ما</a></li>
+                <li><a href="tamas.html">تماس با ما</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <br>
+    <div class="container" >
+        <section class="hero">
+            <h1>خوش آمدید به فروشگاه دامون!</h1>
+            <p>ارائه‌دهنده بهترین پسته‌های ایرانی با کیفیت بالا و قیمت مناسب.</p>
+            <button onclick="location.href='mahsoolat.html#target';">دیدن محصولات</button>
+        </section>
+
+        <section id="products" class="product-highlight">
+            <h2 id="target">محصولات برجسته</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="img/akbari.jpg" alt="پسته اکبری">
+                    <h3>پسته اکبری</h3>
+                    <p>پسته‌ای خوشمزه و با کیفیت بالا.</p>
+                    <p><b>یک کیلوگرم</b></p>
+                    <del>قیمت:550,000 تومان</del>
+                    <p class="price">قیمت: 530,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته اکبری">
+                        <input type="hidden" name="product_price" value="530000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+
+
+                <div class="product">
+                    <img src="img/poost.jpg" alt="پسته تازه">
+                    <h3>مغز پسته</h3>
+                    <p>پسته تازه .</p>
+                    <p><b>یک کیلوگرم</b></p>
+                    <del>قیمت:1200,000 تومان</del>
+                    <p class="price">قیمت: 990,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته تازه - 500 گرم">
+                        <input type="hidden" name="product_price" value="1000000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+
+
+                <div class="product">
+                    <img src="img/taze.jpg" alt="پسته تازه">
+                    <h3>پسته تازه</h3>
+                    <p>پسته تازه و ترد.</p>
+                    <p><b>یک کیلوگرم</b></p>
+                    <del>قیمت:350,000 تومان</del>
+                    <p class="price">قیمت: 300,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته تازه">
+                        <input type="hidden" name="product_price" value="300000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+
+                <div class="product">
+                    <img src="img/ghoochi.jpg" alt="پسته کله قوچی">
+                    <h3>پسته کله قوچی</h3>
+                    <p>پسته‌ای خوشمزه و بزرگ.</p>
+                    <p><b>یک کیلوگرم</b></p>
+                    <del>قیمت:500,000 تومان</del>
+                    <p class="price">قیمت: 480,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته کله قوچی">
+                        <input type="hidden" name="product_price" value="480000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+               
+
+                <div class="product">
+                    <img src="img/poost.jpg" alt="پسته تازه">
+                    <h3>مغز پسته</h3>
+                    <p>پسته تازه .</p>
+                    <p><b>500 گرم</b></p>
+                    <del>قیمت:600,000 تومان</del>
+                    <p class="price">قیمت: 500,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته تازه - 500 گرم">
+                        <input type="hidden" name="product_price" value="500000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+
+                <div class="product">
+                    <img src="img/taze.jpg" alt="پسته تازه">
+                    <h3>پسته تازه</h3>
+                    <p>پسته تازه و ترد.</p>
+                    <p><b>500 گرم</b></p>
+                    <del>قیمت:270,000 تومان</del>
+                    <p class="price">قیمت: 250,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته تازه - 500 گرم">
+                        <input type="hidden" name="product_price" value="250000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+
+                
+
+                <div class="product">
+                    <img src="img/akbari.jpg" alt="پسته اکبری">
+                    <h3>پسته اکبری</h3>
+                    <p>پسته‌ای خوشمزه و با کیفیت بالا.</p>
+                    <p><b>500 گرم</b></p>
+                    <del>قیمت:270,000 تومان</del>
+                    <p class="price">قیمت: 250,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته اکبری - 500 گرم">
+                        <input type="hidden" name="product_price" value="250000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+               
+                <div class="product">
+                    <img src="img/poost.jpg" alt="پسته تازه">
+                    <h3>مغز پسته</h3>
+                    <p>پسته تازه .</p>
+                    <p><b>250 گرم</b></p>
+                    <del>قیمت:350,000 تومان</del>
+                    <p class="price">قیمت: 300,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته تازه - 500 گرم">
+                        <input type="hidden" name="product_price" value="1000000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+                 
+                <div class="product">
+                    <img src="img/ghoochi.jpg" alt="پسته کله قوچی">
+                    <h3>پسته کله قوچی</h3>
+                    <p>پسته‌ای خوشمزه و بزرگ.</p>
+                    <p><b>500 گرم</b></p>
+                    <del>قیمت:250,000 تومان</del>
+                    <p class="price">قیمت: 230,000 تومان</p>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="پسته کله قوچی - 500 گرم">
+                        <input type="hidden" name="product_price" value="230000">
+                        <button type="submit">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+               
+
+               
+            </div>
+        </section>
+    </div>
+
+    <footer style="height: 2rem;">
+       <p></p>
+    </footer>
+</body>
+</html>
